@@ -7,5 +7,8 @@ defmodule WaterSensorApiWeb.Router do
 
   scope "/api", WaterSensorApiWeb do
     pipe_through :api
+
+    get "/health", ApiController, :health
+    get "/status", ApiController, :status
   end
 end
