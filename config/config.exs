@@ -14,6 +14,13 @@ config :water_sensor_api, WaterSensorApiWeb.Endpoint,
   render_errors: [view: WaterSensorApiWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: WaterSensorApi.PubSub, adapter: Phoenix.PubSub.PG2]
 
+# GPIO config
+config :water_sensor_api,
+  sensor_pins: %{
+    leer: 14,
+    voll: 17
+  }
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
